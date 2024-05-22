@@ -24,7 +24,9 @@ from datetime import timedelta
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = "django-insecure-=i99jjve%p7j65t3fvi-x!1kc(nfoc)llo*y17t++^q5lz=oj0"
+
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -144,15 +146,14 @@ WSGI_APPLICATION = 'art_gallery.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': env("DB_NAME"),
-        'USER': env("DB_USER"),
-        'PASSWORD': env("DB_PASSWORD"),
-        'HOST': env("DB_HOST"),
-        'PORT': env("DB_PORT"),
+        'NAME': "art_gallery_db",
+        'USER': "postgres",
+        'PASSWORD': 1234,
+        'HOST': "localhost",
+        'PORT': 5432,
     }
 }
 
