@@ -31,8 +31,13 @@ SECRET_KEY = "django-insecure-=i99jjve%p7j65t3fvi-x!1kc(nfoc)llo*y17t++^q5lz=oj0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['art-gallery-backend-xo72.onrender.com', 
-                 '127.0.0.1']
+ALLOWED_HOSTS = ['*']
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+CSRF_TRUSTED_ORIGINS = [
+    "https://art-gallery-backend-xo72.onrender.com",
+]
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
@@ -201,4 +206,3 @@ MEDIA_URL = '/media/'
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-CORS_ORIGIN_ALLOW_ALL = True
