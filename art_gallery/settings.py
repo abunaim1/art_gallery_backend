@@ -31,7 +31,8 @@ SECRET_KEY = "django-insecure-=i99jjve%p7j65t3fvi-x!1kc(nfoc)llo*y17t++^q5lz=oj0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['https://art-gallery-backend-xo72.onrender.com/']
+ALLOWED_HOSTS = ['https://art-gallery-backend-xo72.onrender.com/', 
+                 '127.0.0.1']
 
 AUTH_USER_MODEL = 'user.CustomUser'
 
