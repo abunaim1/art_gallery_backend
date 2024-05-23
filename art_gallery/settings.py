@@ -9,8 +9,8 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-import dj_database_url
 from pathlib import Path
+import dj_database_url
 import environ
 env = environ.Env()
 environ.Env.read_env()
@@ -24,11 +24,9 @@ from datetime import timedelta
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-=i99jjve%p7j65t3fvi-x!1kc(nfoc)llo*y17t++^q5lz=oj0"
+SECRET_KEY = env('SECRET_KEY')
 
 
-
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
@@ -152,18 +150,7 @@ DATABASES = {
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': "art_gallery_db",
-#         'USER': "postgres",
-#         'PASSWORD': 1234,
-#         'HOST': "localhost",
-#         'PORT': 5432,
-#     }
-# }
-
-# DATABASES['default'] = dj_database_url.parse("postgres://artgallarydb_user:cc64Bo80aPHfLMpUDZ9nIYINSGmkuE14@dpg-cp721ki0si5c73amr57g-a.oregon-postgres.render.com/artgallarydb")
+DATABASES['default'] =  dj_database_url.parse(env('DATABASE_URL'))
 
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
